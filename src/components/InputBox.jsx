@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 function InputBox({
   label,
   amount,
@@ -9,11 +11,19 @@ function InputBox({
   currencyDisabled = false,
   className = "",
 }) {
+  const amoutInputId = useId();
+
   return (
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
       <div className="w-1/2">
-        <label className="text-black/40 mb-2 inline-block">{label}</label>
+        <label
+          htmlFor={amoutInputId}
+          className="text-black/40 mb-2 inline-block"
+        >
+          {label}
+        </label>
         <input
+          id={amoutInputId}
           className="outline-none w-full bg-transparent py-1.5"
           type="number"
           placeholder="Amount"
