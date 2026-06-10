@@ -22,7 +22,7 @@ function App() {
   };
 
   const convert = () => {
-    setConvertedAmount(amount * data[to]);
+    setConvertedAmount((amount * data[to]).toFixed(4));
   };
 
   const BackgroundImage =
